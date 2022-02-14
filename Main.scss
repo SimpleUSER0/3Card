@@ -1,0 +1,107 @@
+// Primary 
+
+$Bright-orange: hsl(31, 77%, 52%);
+$Dark-cyan: hsl(184, 100%, 22%);
+$Very-dark-cyan: hsl(179, 100%, 13%);
+
+
+$grid-width:1440px;
+$gutter-vertical: 4rem;
+$gutter-horizontal:-1rem;
+
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.card {
+    padding: 10rem 1rem;
+    border-radius: 5px;
+    transition: all 1s;
+    &--1 {
+        background-color: $Bright-orange;
+        &:hover {
+            transform: translateX(-20px);
+        }
+        
+    }
+
+    &--2 {
+        background-color: $Dark-cyan;
+        &:hover {
+            transform: translateY(-20px);
+        }
+    }
+    &--3 {
+        background-color: $Very-dark-cyan;
+        &:hover {
+            transform: translateX(20px);
+        }
+    }
+}
+
+
+
+h1 {
+    margin-top: -6rem;
+    color: white;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+}
+
+p {
+    margin-bottom: 2rem;
+    color: white;
+    font-size: 15px;
+}
+
+.btn {
+    border: 1px solid white;
+    padding: 10px;
+    border-radius: 100px;
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 15px;
+    
+    &_color--1 {
+        &:hover {
+            background-color: white;
+            color: $Bright-orange;
+        }
+    }
+    &_color--2 {
+        &:hover {
+            background-color: white;
+            color: $Dark-cyan;
+        }  
+    }
+    &_color--3 {
+        &:hover {
+            background-color: white;
+            color: $Very-dark-cyan;
+        }
+    }
+}
+
+
+.row {
+    max-width:40rem;
+    margin: 0 auto;
+    margin-top: 5rem;
+
+   
+
+    //Atribute selector //all atribute starting with 'col'-
+    [class^="col-"]  {
+        float: left;
+
+        &:not(:last-child) {
+            margin-right: $gutter-horizontal;
+        }
+    }
+    .col-1-of-3 {
+        width: calc( (100% - 2 * #{$gutter-horizontal} ) / 3 );
+    }
+}
